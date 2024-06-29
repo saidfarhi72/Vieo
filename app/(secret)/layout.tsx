@@ -1,7 +1,7 @@
 "use client";
 
 import { Loader } from "@/components/ui/loader";
-import { ChildProps } from "@/types";
+import { ChildProps } from "@/types/index";
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import React from "react";

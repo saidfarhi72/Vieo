@@ -11,6 +11,7 @@ import {
   Presentation,
   Settings,
   Tv2,
+  StickyNote
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -80,6 +81,11 @@ export const NavItem = ({
       label: "Video Conference",
       icon: <Tv2 className="h-4 w-4 mr-2" />,
       href: `/organization/${organization.id}/VideoCall`,
+    },
+    {
+      label: "Notion",
+      icon: <StickyNote className="h-4 w-4 mr-2"  />,
+      href: `/documents`,
     },
   ];
 
