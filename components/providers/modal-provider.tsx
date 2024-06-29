@@ -7,6 +7,8 @@ import { ProModal } from "@/components/modals/pro-modal";
 import { CardDataProvider } from "@/providers/cardModalContext";
 import { LoadingModal } from "../modals/loding-modal";
 import { useLoadingModal } from "@/hooks/use-loading-modal";
+import CoverImageModal from "../modals/cover-image-modal";
+import SettingsModal from "../modals/settings-modal";
 
 export const ModalProviderTril = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -26,6 +28,8 @@ export const ModalProviderTril = () => {
 
       <CardModal />
       {loadingModal.isOpen && <LoadingModal />}
+      <SettingsModal />
+      <CoverImageModal />
 
       <ProModal />
     </>

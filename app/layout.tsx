@@ -12,6 +12,8 @@ import { ModalProviderTril } from "@/components/providers/modal-provider";
 import { Suspense } from "react";
 import { Loading } from "@/components/auth/loading";
 import { LoadingModal } from "@/components/modals/loding-modal";
+import { EdgeStoreProvider } from "@/lib/edgestore";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,13 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme={"bumblebee"} className="h-full bg-base-100">
       <ConvexClientProvider>
-        <QueryProvider>
-          <Toaster />
-          <ModalProviderTril />
-          <ModalProvider />
+        <EdgeStoreProvider>
+          <QueryProvider>
+            <Toaster />
+            <ModalProviderTril />
+            <ModalProvider />
 
-          <body className={inter.className}>{children}</body>
-        </QueryProvider>
+            <body className={inter.className}>{children}</body>
+          </QueryProvider>
+        </EdgeStoreProvider>
       </ConvexClientProvider>
     </html>
   );
